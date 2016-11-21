@@ -10,6 +10,13 @@ import android.view.View;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 
+/*Modified by Alfredo J. Velasco 11/21/2016, original can be cloned from:
+*
+* https://github.com/harcoPro/SubtitleCoordinatorLayoutExample.git
+*
+* */
+
+
 public class MainActivity extends AppCompatActivity implements AppBarLayout.OnOffsetChangedListener {
 
     @Bind(R.id.app_bar_layout)
@@ -23,6 +30,9 @@ public class MainActivity extends AppCompatActivity implements AppBarLayout.OnOf
 
     @Bind(R.id.toolbar_header_view)
     HeaderView toolbarHeaderView;
+
+//    @Bind(R.id.toolbar_header_in_frame)
+//    HeaderView toolbarHeaderInFrameView;
 
     @Bind(R.id.float_header_view)
     HeaderView floatHeaderView;
@@ -42,8 +52,8 @@ public class MainActivity extends AppCompatActivity implements AppBarLayout.OnOf
 
         collapsingToolbarLayout.setTitle(" ");
 
-        toolbarHeaderView.bindTo("Some Title", "Subtitle");
-        floatHeaderView.bindTo("Some Title", "Subtitle");
+        toolbarHeaderView.bindTo("Toolbar header", "Subtitle");
+        floatHeaderView.bindTo("Toolbar header", "Subtitle");
 
         appBarLayout.addOnOffsetChangedListener(this);
     }
@@ -63,5 +73,4 @@ public class MainActivity extends AppCompatActivity implements AppBarLayout.OnOf
             isHideToolbarView = !isHideToolbarView;
         }
     }
-
 }
